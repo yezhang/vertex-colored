@@ -1,0 +1,46 @@
+﻿生成启动时间为 2014-01-06 0:52:59。
+     1>项目“C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\TestBaseCode\TestBaseCode.vcxproj”在节点 3 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\TestBaseCode.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Debug\TestBaseCode.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"D:\CplusplusLibrary\CGAL-4.3\include" /ID:\CplusplusLibrary\boost_1_54_0 /I"D:\CplusplusLibrary\CGAL-4.3\auxiliary\gmp\include" /I"D:\CplusplusLibrary\CGAL-4.3\build\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\SetTest.cpp
+         SetTest.cpp
+       ManifestResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\TestBaseCode.exe.embed.manifest.res" Debug\TestBaseCode_manifest.rc 
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\Debug\TestBaseCode.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\CplusplusLibrary\CGAL-4.3\build\lib" /LIBPATH:"D:\CplusplusLibrary\boost_1_54_0\lib32-msvc-10.0" /LIBPATH:"D:\CplusplusLibrary\CGAL-4.3\auxiliary\gmp\lib" gtestd.lib gtest_maind.lib QtCored4.lib QtGuid4.lib qtmaind.lib "CGAL_Core-vc100-mt-gd-4.3.lib" "CGAL-vc100-mt-gd-4.3.lib" "libboost_thread-vc100-mt-gd-1_54.lib" "libgmp-10.lib" "libmpfr-4.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\TestBaseCode.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\Debug\TestBaseCode.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\Debug\TestBaseCode.lib" /MACHINE:X86 Debug\TestBaseCode.exe.embed.manifest.res
+         Debug\SetTest.obj
+       Manifest:
+         正在删除文件“Debug\TestBaseCode.exe.embed.manifest”。
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\TestBaseCode.exe.embed.manifest" /manifest Debug\TestBaseCode.exe.intermediate.manifest
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\TestBaseCode.exe.embed.manifest.res" Debug\TestBaseCode_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\Debug\TestBaseCode.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\CplusplusLibrary\CGAL-4.3\build\lib" /LIBPATH:"D:\CplusplusLibrary\boost_1_54_0\lib32-msvc-10.0" /LIBPATH:"D:\CplusplusLibrary\CGAL-4.3\auxiliary\gmp\lib" gtestd.lib gtest_maind.lib QtCored4.lib QtGuid4.lib qtmaind.lib "CGAL_Core-vc100-mt-gd-4.3.lib" "CGAL-vc100-mt-gd-4.3.lib" "libboost_thread-vc100-mt-gd-1_54.lib" "libgmp-10.lib" "libmpfr-4.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\TestBaseCode.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\Debug\TestBaseCode.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\Debug\TestBaseCode.lib" /MACHINE:X86 Debug\TestBaseCode.exe.embed.manifest.res
+         Debug\SetTest.obj
+         TestBaseCode.vcxproj -> C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\Debug\TestBaseCode.exe
+       PostBuildEvent:
+         "C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\Debug\TestBaseCode.exe"
+         :VCEnd
+         Running main() from gtest_main.cc
+         [==========] Running 2 tests from 1 test case.
+         [----------] Global test environment set-up.
+         [----------] 2 tests from STLTest
+         [ RUN      ] STLTest.SetEqualTest
+         [       OK ] STLTest.SetEqualTest (0 ms)
+         [ RUN      ] STLTest.SetEqualOperatorTest
+         [       OK ] STLTest.SetEqualOperatorTest (1 ms)
+         [----------] 2 tests from STLTest (1 ms total)
+         
+         [----------] Global test environment tear-down
+         [==========] 2 tests from 1 test case ran. (2 ms total)
+         [  PASSED  ] 2 tests.
+       FinalizeBuildStatus:
+         正在删除文件“Debug\TestBaseCode.unsuccessfulbuild”。
+         正在对“Debug\TestBaseCode.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\better\Documents\Visual Studio 2010\Projects\ColoringGraphAlgorithm\TestBaseCode\TestBaseCode.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:09.08
