@@ -1,2 +1,7 @@
 *.ipch
 *.sdf
+*.pdb
+*.obj
+*.exe
+*.lib
+*.dll

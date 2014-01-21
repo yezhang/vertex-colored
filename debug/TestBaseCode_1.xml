@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" disabled="0" errors="0" timestamp="2014-01-21T23:52:44" time="111.305" name="AllTests">
+  <testsuite name="KPN/EfficientTest" tests="2" failures="0" disabled="0" errors="0" time="111.299">
+    <testcase name="ExpandOneColorCaseTest/0" value_param="8-byte object &lt;06-00 00-00 01-00 00-00&gt;" status="run" time="0.022" classname="KPN/EfficientTest" />
+    <testcase name="ExpandOneColorCaseTest/1" value_param="8-byte object &lt;06-00 00-00 02-00 00-00&gt;" status="run" time="111.272" classname="KPN/EfficientTest" />
+  </testsuite>
+</testsuites>

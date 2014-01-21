@@ -18,7 +18,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\SetTest.cpp">
+    <ClCompile Include="EfficientTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="testmain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

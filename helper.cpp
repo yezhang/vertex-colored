@@ -4,6 +4,8 @@
 #include "expandcoloringalgorithm.h"
 #include <sstream>
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
 
 Helper::Helper()
 {
@@ -156,7 +158,7 @@ unsigned int Helper::getUniqueColors(unsigned int count, std::vector<QColor> &co
 Node* Helper::showGraphInScene(GraphWidget* view, QGraphicsScene* scene, const BoostGraph &g)
 {
 
-    Node *centerNode;
+    Node *centerNode = NULL;
 
     BoostGraph::vertex_iterator vertexIt, vertexEnd;
     BoostGraph::adjacency_iterator neighbourIt, neighbourEnd;
@@ -186,6 +188,11 @@ Node* Helper::showGraphInScene(GraphWidget* view, QGraphicsScene* scene, const B
         }
     }
 
+	if (centerNode == NULL)
+	{
+		centerNode = nodes[0];
+	}
+	
     BoostGraph::edge_iterator edgeIt, edgeEnd;
     boost::tuples::tie(edgeIt, edgeEnd) = edges(g);//Get all edges of Graph g
 
@@ -197,16 +204,23 @@ Node* Helper::showGraphInScene(GraphWidget* view, QGraphicsScene* scene, const B
         scene->addItem(new Edge(nodes[src], nodes[des]));
     }
 
+	std::srand((unsigned)std::time(NULL));  
+	int nodesNum = nodes.size();
 
-    nodes[0]->setPos(-50, -50); //N1
-    nodes[1]->setPos(0, -50); //N2
-    nodes[2]->setPos(150, -50); //N3
-    nodes[3]->setPos(-50, 0); //N4
+	for (int i = 0; i < nodesNum; ++i)
+	{
+		nodes[i]->setPos(rand()%200,(rand()%100)*(-1));
+	}
+	
+    //nodes[0]->setPos(-50, -50); //N1
+    //nodes[1]->setPos(0, -50); //N2
+    //nodes[2]->setPos(150, -50); //N3
+    //nodes[3]->setPos(-50, 0); //N4
     centerNode->setPos(0, 0);//N5
-    nodes[5]->setPos(150, 0);//N6
-    nodes[6]->setPos(150, -50); //N7
-    nodes[7]->setPos(150, 150); //N8
-    nodes[N9]->setPos(200,100); //N9
+    //nodes[5]->setPos(150, 0);//N6
+    //nodes[6]->setPos(150, -50); //N7
+    //nodes[7]->setPos(150, 150); //N8
+    //nodes[N9]->setPos(200,100); //N9
 
 
     return centerNode;
@@ -282,7 +296,7 @@ BoostGraph Helper::generateGraph()
 
 Node* Helper::generateGraphInView(GraphWidget *view, QGraphicsScene* scene)
 {
-    this->graph = generateGraph();
+    this->graph = generateGraphFromNumber(10,2);
     Node* centerNode = showGraphInScene(view,scene, this->graph);
 
     //centerNode->setIsHighlighted(true);
@@ -424,4 +438,48 @@ QColor Helper::colorToGray( QColor color )
 	int Y = qGray(color.red(), color.green(), color.blue());
 	
 	return QColor(Y,Y,Y,color.alpha());
+}
+
+BoostGraph Helper::generateGraphFromFile( string filefullname )
+{
+	return generateGraph();
+}
+
+BoostGraph Helper::generateGraphFromNumber( int colorNum, int vertexNumPerColor )
+{
+	int i = 0;
+	int k = colorNum;
+	int p = vertexNumPerColor;
+	int n = k*p;
+
+	BoostGraph g(n);
+	this->vertexNum = n;
+	this->colorNum = k;
+	
+	//const int num_edges = p*p*(k-1);
+	g = BoostGraph(this->vertexNum);
+
+	for(i = 0; i < vertexNum; ++i)
+	{
+		(g)[i].id = i;
+		std::stringstream ss;
+		ss << i+1;
+		(g)[i].name = ss.str();
+
+		(g)[i].colorIndex = i%k;
+		(g)[i].color = allcolors[i%k];
+	}
+
+	for (i = 0; i < vertexNum; ++i)
+	{
+		for (int j = i+1; j < vertexNum; ++j)
+		{
+			if (j % k > i % k)
+			{
+				add_edge(i,j,g);
+			}		
+		}		
+	}	 
+
+	return g;
 }

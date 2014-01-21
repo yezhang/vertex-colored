@@ -11,7 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\SetTest.cpp" />
+    <ClCompile Include="EfficientTest.cpp" />
+    <ClCompile Include="testmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestQT.vcxproj">
+      <Project>{06033765-ecf9-3d4f-a44c-3f50cb8ce37b}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E368F868-3A6F-490B-871B-C769EED5E461}</ProjectGuid>
@@ -46,6 +52,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)\BaseCode;$(GTest)\include;$(BOOSTDIR);$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\ActiveQt;$(QTDIR)\mkspecs\win32-msvc2012;$(IncludePath)</IncludePath>
     <LibraryPath>$(GTest)\msvc\gtest\$(IntDir);$(BOOSTDIR)\lib32-msvc-10.0;$(QTDIR)\lib;$(LibraryPath)</LibraryPath>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

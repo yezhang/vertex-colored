@@ -1,6 +1,7 @@
 #ifndef HELPER_H
 #define HELPER_H
 
+#include <string>
 #include <iostream> // for std::cout
 #include <utility> // for std::pair
 #include <algorithm> // for std::for_each
@@ -84,7 +85,20 @@ public:
     Node* showGraphInScene(GraphWidget* view, QGraphicsScene* scene, BoostGraph const & g);
 
     BoostGraph generateGraph();
-	BoostGraph generateGraphFromFile(String filefullname);
+
+	//************************************
+	// 从一个文件中生成对应的图。
+	// Method:    generateGraphFromFile
+	// FullName:  Helper::generateGraphFromFile
+	// Access:    
+	// Returns:   BoostGraph
+	// Qualifier:
+	// Parameter: string filefullname
+	//************************************
+	BoostGraph generateGraphFromFile(string filefullname);
+
+
+	BoostGraph generateGraphFromNumber(int colorNum, int vertexNumPerColor);
 
     Node* generateGraphInView(GraphWidget* view, QGraphicsScene* scene);
     void highlightTheseNodeOnly(vector<int>& vertexIndex);
