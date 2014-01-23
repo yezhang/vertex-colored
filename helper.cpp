@@ -11,6 +11,8 @@ Helper::Helper()
 {
     excluded.push_back(QColor(0,0,0));// exclude white color
     excluded.push_back(QColor(255,255,255)); //exclude black color
+	this->colorNum = 33;
+
     getUniqueColors(colorNum,allcolors,excluded);
 
 	//print all colors
@@ -296,7 +298,7 @@ BoostGraph Helper::generateGraph()
 
 Node* Helper::generateGraphInView(GraphWidget *view, QGraphicsScene* scene)
 {
-    this->graph = generateGraphFromNumber(10,2);
+    this->graph = generateGraphFromNumber(8,2);
     Node* centerNode = showGraphInScene(view,scene, this->graph);
 
     //centerNode->setIsHighlighted(true);
@@ -440,15 +442,11 @@ QColor Helper::colorToGray( QColor color )
 	return QColor(Y,Y,Y,color.alpha());
 }
 
-BoostGraph Helper::generateGraphFromFile( string filefullname )
-{
-	return generateGraph();
-}
 
-BoostGraph Helper::generateGraphFromNumber( int colorNum, int vertexNumPerColor )
+BoostGraph Helper::generateGraphFromNumber( int colorNumParam, int vertexNumPerColor )
 {
 	int i = 0;
-	int k = colorNum;
+	int k = colorNumParam;
 	int p = vertexNumPerColor;
 	int n = k*p;
 
@@ -456,7 +454,9 @@ BoostGraph Helper::generateGraphFromNumber( int colorNum, int vertexNumPerColor 
 	this->vertexNum = n;
 	this->colorNum = k;
 	
-	//const int num_edges = p*p*(k-1);
+	//getUniqueColors(colorNum,allcolors,excluded);
+
+	const int num_edges = k*p*p*(k-1);
 	g = BoostGraph(this->vertexNum);
 
 	for(i = 0; i < vertexNum; ++i)

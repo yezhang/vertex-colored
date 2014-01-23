@@ -224,7 +224,7 @@ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
         }else{
             painter->setPen(QPen(Qt::black, 0));
         }
-        painter->setFont(QFont("song",12));
+        painter->setFont(QFont("song",24));
         painter->drawText(this->boundingRect(),Qt::AlignCenter ,QString::number(nodeId)); //show nodeId
     }
 

@@ -85,19 +85,6 @@ public:
     Node* showGraphInScene(GraphWidget* view, QGraphicsScene* scene, BoostGraph const & g);
 
     BoostGraph generateGraph();
-
-	//************************************
-	// 从一个文件中生成对应的图。
-	// Method:    generateGraphFromFile
-	// FullName:  Helper::generateGraphFromFile
-	// Access:    
-	// Returns:   BoostGraph
-	// Qualifier:
-	// Parameter: string filefullname
-	//************************************
-	BoostGraph generateGraphFromFile(string filefullname);
-
-
 	BoostGraph generateGraphFromNumber(int colorNum, int vertexNumPerColor);
 
     Node* generateGraphInView(GraphWidget* view, QGraphicsScene* scene);

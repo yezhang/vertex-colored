@@ -27,15 +27,15 @@ public:
 
 class EfficientTest: public ::testing::TestWithParam<NumberPair>
 {
-
+public:
+	Helper hper;
 };
 
-bool testAlgorithm(int k, int p)
-{
-	Helper hper;
+bool testAlgorithm(int k, int p, Helper& hper)
+{	
 	BoostGraph  g = hper.generateGraphFromNumber(k,p);
 	unsigned int colorNum = k;
-	unsigned int vNum = num_vertices(g);
+	//unsigned int vNum = num_vertices(g);
 
 	ExpandColoringAlgorithm eca(colorNum,g);
 
@@ -61,19 +61,32 @@ bool testAlgorithm(int k, int p)
 
 TEST_P(EfficientTest, ExpandOneColorCaseTest)
 {
-	struct NumberPair para = GetParam();
+	NumberPair para = GetParam();
 
-	EXPECT_TRUE(testAlgorithm(para.k, para.p));
+	EXPECT_TRUE(testAlgorithm(para.k, para.p, this->hper));
 	//EXPECT_TRUE(testSetEqual());
 	SUCCEED();
 }
 
+//INSTANTIATE_TEST_CASE_P(KPN,EfficientTest,testing::Values(	
+//	NumberPair(6, 1),
+//	NumberPair(3, 2),
+//	NumberPair(4, 2),
+//	NumberPair(5, 2),
+//	NumberPair(6, 2)	
+//	));
+
+//cost more time
+//INSTANTIATE_TEST_CASE_P(KPN,EfficientTest,testing::Values(	
+//	NumberPair(7, 2),
+//	NumberPair(8, 2)
+//	));
+
 INSTANTIATE_TEST_CASE_P(KPN,EfficientTest,testing::Values(	
-	NumberPair(6, 1),
-	NumberPair(3, 2),
+	NumberPair(4, 1),
 	NumberPair(4, 2),
-	NumberPair(5, 2),
-	NumberPair(6, 2),
-	NumberPair(7, 2),
-	NumberPair(8, 2)
+	NumberPair(4, 5),
+	NumberPair(4, 10),
+	NumberPair(4, 20),
+	NumberPair(4, 40)	
 	));
